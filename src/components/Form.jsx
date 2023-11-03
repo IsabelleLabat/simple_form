@@ -7,6 +7,7 @@ const Form = ({
   setConfirmPassword,
   name,
   setName,
+  setSubmitted,
 }) => {
   const handleEmailChange = (event) => {
     const value = event.target.value;
@@ -33,38 +34,46 @@ const Form = ({
     if (password !== ConfirmPassword) {
       alert(" Vos deux mots de passe doivent être identiques");
     } else {
-      alert("Vous avez crée un compte!");
+      setSubmitted(true);
     }
   };
   return (
     <>
+      <header>
+        <h1>Create account</h1>
+      </header>
+
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
+        <label htmlFor="name">Name</label>
         <input
+          id="name"
           type="text"
           placeholder="Jean Dupont"
           name="username"
           value={name}
           onChange={handleNameChange}
         />
-        <label>Email</label>
+        <label htmlFor="email">Email</label>
         <input
+          id="email"
           type="text"
           placeholder="name@mail.com"
           name="email"
           value={email}
           onChange={handleEmailChange}
         />
-        <label>Password</label>
+        <label htmlFor="password">Password</label>
         <input
+          id="password"
           type="password"
           placeholder="enter password"
           name="password"
           value={password}
           onChange={handlePasswordChange}
         />
-        <label>Confirm Password</label>
+        <label htmlFor="confirmPassword">Confirm Password</label>
         <input
+          id="confirmPassword"
           type="password"
           placeholder="confirm password"
           name="ConfirmPassword"

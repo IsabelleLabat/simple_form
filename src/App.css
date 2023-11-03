@@ -16,7 +16,19 @@
   font-size: 15px;
   font-weight: 700;
 }
-
+.backtoform {
+  margin-top: 20px;
+  width: 250px;
+  outline: none;
+  height: 45px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background-color: #5c47d3;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+}
 h1 {
   text-align: center;
   margin-top: 50px;
@@ -42,4 +54,12 @@ form input {
 
 .stepTwo {
   margin-top: 20px;
+  width: 250px;
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  padding: 30px;
+}
+
+.stepTwo p {
+  padding-bottom: 20px;
 }

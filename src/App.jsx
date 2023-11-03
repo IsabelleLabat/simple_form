@@ -8,25 +8,31 @@ function App() {
   const [password, setPassword] = useState("");
   const [ConfirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
       <div className="container">
-        <header>
-          <h1>Create account</h1>
-        </header>
-        <Form
-          email={email}
-          setEmail={setEmail}
-          password={password}
-          setPassword={setPassword}
-          ConfirmPassword={ConfirmPassword}
-          setConfirmPassword={setConfirmPassword}
-          name={name}
-          setName={setName}
-        />
-
-        <StepTwo email={email} password={password} name={name} />
+        {submitted === false ? (
+          <Form
+            email={email}
+            setEmail={setEmail}
+            password={password}
+            setPassword={setPassword}
+            ConfirmPassword={ConfirmPassword}
+            setConfirmPassword={setConfirmPassword}
+            name={name}
+            setName={setName}
+            setSubmitted={setSubmitted}
+          />
+        ) : (
+          <StepTwo
+            email={email}
+            password={password}
+            name={name}
+            setSubmitted={setSubmitted}
+          />
+        )}
       </div>
     </>
   );
